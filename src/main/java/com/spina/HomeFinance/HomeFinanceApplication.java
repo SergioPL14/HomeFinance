@@ -1,4 +1,4 @@
-package com.example.HomeFinance;
+package com.spina.HomeFinance;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
