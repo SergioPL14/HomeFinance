@@ -1,32 +1,33 @@
 # Coinbase API Configuration
 coinbase:
   url: https://api.coinbase.com/
-  btcusdspot: v2/prices/BTC-USD/spot
-  btceurspot: v2/prices/BTC-EUR/spot
+  readAPIkey: 5gKrLBe4kvmrSNUB
+  btcusdpair: https://api.coinbase.com/v2/prices/spot?currency_pair=BTC-USD
+  btceurpair: https://api.coinbase.com/v2/prices/spot?currency_pair=BTC-EUR
 
-# Database Configuration
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/mydatabase
-    username: myusername
-    password: mypassword
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-# Logging Configuration
-logging:
-  level:
-    root: INFO
-    com.example: DEBUG
-
-# Server Configuration
-server:
-  port: 8080
-
-# Custom Application Properties
-custom:
-  property1: value1
-  property2: value2
+## Database Configuration
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/mydatabase
+#    username: myusername
+#    password: mypassword
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#
+## Logging Configuration
+#logging:
+#  level:
+#    root: INFO
+#    com.example: DEBUG
+#
+## Server Configuration
+#server:
+#  port: 8080
+#
+## Custom Application Properties
+#custom:
+#  property1: value1
+#  property2: value2
