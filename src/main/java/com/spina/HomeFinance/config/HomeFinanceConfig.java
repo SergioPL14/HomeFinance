@@ -1,4 +1,4 @@
-package com.spina.config;
+package com.spina.HomeFinance.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

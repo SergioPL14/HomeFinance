@@ -1,4 +1,4 @@
-package com.spina.service;
+package com.spina.HomeFinance.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,10 +13,6 @@ import java.util.List;
 public class CoinbaseService {
     @Value("${coinbase.url}")
     private String url;
-    @Value("${coinbase.btcusdspot}")
-    private String btcUsdSpot;
-    @Value("${coinbase.btceurspot}")
-    private String btcEurSpot;
     @Value("${coinbase.readAPIkey}")
     private String apiKey;
     @Value("${coinbase.btcusdpair}")
@@ -24,9 +20,8 @@ public class CoinbaseService {
     @Value("${coinbase.btceurpair}")
     private String btcEurPairEndpoint;
 
+    private final RestTemplate restTemplate;
     @Autowired
-    RestTemplate restTemplate;
-
     public CoinbaseService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
@@ -50,6 +45,6 @@ public class CoinbaseService {
         return responseEntity.getBody();
     }
     public String getBtcEurSpot() {
-        return restTemplate.getForObject(url + btcEurSpot, String.class);
+        return restTemplate.getForObject(url + btcEurPairEndpoint, String.class);
     }
 }

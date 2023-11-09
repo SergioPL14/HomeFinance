@@ -1,9 +1,9 @@
 # Coinbase API Configuration
 coinbase:
-  url: https://api.coinbase.com/
+  url: https://api.coinbase.com
   readAPIkey: 5gKrLBe4kvmrSNUB
-  btcusdpair: https://api.coinbase.com/v2/prices/spot?currency_pair=BTC-USD
-  btceurpair: https://api.coinbase.com/v2/prices/spot?currency_pair=BTC-EUR
+  btcusdpair: /v2/prices/spot?currency_pair=BTC-USD
+  btceurpair: /v2/prices/spot?currency_pair=BTC-EUR
 
 ## Database Configuration
 #spring:
