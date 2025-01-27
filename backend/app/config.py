@@ -2,9 +2,10 @@ from pydantic_settings import BaseSettings
 from functools import lru_cache
 
 class Settings(BaseSettings):
-    # Configuración JWT
-    JWT_SECRET_KEY: str = "tu_clave_secreta_aqui"  # Cambiar en producción
-    JWT_ALGORITHM: str = "HS256"
+    APP_NAME: str = "HomefinanceApp"
+    DATABASE_URL: str = "sqlite:///./financial_portfolio.db"
+    JWT_SECRET_KEY: str
+    ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
 
     # URLs de APIs (ejemplos)
@@ -20,4 +21,6 @@ class Settings(BaseSettings):
 
 @lru_cache()
 def get_settings():
-    return Settings() 
+    return Settings()
+
+settings = Settings() 
