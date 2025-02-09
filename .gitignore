@@ -26,4 +26,21 @@ yarn-error.log*
 .idea/
 .vscode/
 *.swp
-*.swo 
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.env
+.venv
+ENV/
+*.egg-info/
+
+# Sensitive files
+.config.key
+config/config.yml
+!config/config.template.yml 

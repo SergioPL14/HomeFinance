@@ -1,0 +1,16 @@
+# Template para la configuración - NO INCLUIR DATOS REALES AQUÍ
+credentials:
+  santander:
+    username: "your_username"
+    password: "your_password"
+    api_key: "your_api_key"
+    api_secret: "your_api_secret"
+  
+  coinbase:
+    api_key: "your_api_key"
+    api_secret: "your_api_secret"
+
+settings:
+  database_url: "sqlite:///./financial_portfolio.db"
+  jwt_secret: "your_jwt_secret"
+  environment: "development"
