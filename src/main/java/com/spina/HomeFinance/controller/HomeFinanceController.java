@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
+import java.net.ProtocolException;
+import java.security.InvalidKeyException;
+
 @RestController
 @RequestMapping("/api")
 public class HomeFinanceController {
@@ -27,5 +31,10 @@ public class HomeFinanceController {
     @GetMapping("/btceurspot")
     public String getBtcEurSpot() {
         return coinbaseService.getBtcEurSpot();
+    }
+
+    @GetMapping("/accounts")
+    public String getAccounts() throws IOException, InvalidKeyException {
+        return coinbaseService.getAccounts();
     }
 }
