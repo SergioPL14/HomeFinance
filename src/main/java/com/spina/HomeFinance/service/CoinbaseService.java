@@ -63,13 +63,13 @@ public class CoinbaseService {
 
         // Paso 1: Obtener el timestamp actual en segundos
         long timestamp = System.currentTimeMillis() / 1000;
-
+        System.out.println("TIMESTAMP milis: " + System.currentTimeMillis());
+        System.out.println("TIMESTAMP secs: " + timestamp);
         // Paso 2: Definir el método HTTP y la ruta de la solicitud
         String method = "GET";
-        String requestPath = "/v2/accounts";
 
         // Paso 3: Generar la firma
-        String signature = generateSignature(apiSecret, timestamp, method, requestPath, "");
+        String signature = generateSignature(apiSecret, timestamp, method, accountsEndpoint, "");
 
         // Paso 4: Hacer la solicitud HTTP
         URL url = new URL(urlAccounts);
@@ -78,7 +78,7 @@ public class CoinbaseService {
         connection.setRequestProperty("CB-ACCESS-KEY", apiKey);
         connection.setRequestProperty("CB-ACCESS-SIGN", signature);
         connection.setRequestProperty("CB-ACCESS-TIMESTAMP", String.valueOf(timestamp));
-        connection.setRequestProperty("CB-VERSION", "v1.0");
+        connection.setRequestProperty("CB-VERSION", "2023-01-01");
 
         // Paso 5: Leer la respuesta
         int responseCode = connection.getResponseCode();
@@ -103,7 +103,7 @@ public class CoinbaseService {
 
     private HttpHeaders getHeaders() {
         HttpHeaders headers = new HttpHeaders();
-        headers.set("Authorization", "Bearer " + apiKey);
+//        headers.set("Authorization", "Bearer " + apiKey);
         headers.setAccept(List.of(MediaType.APPLICATION_JSON));
         return headers;
     }
